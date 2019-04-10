@@ -1,11 +1,15 @@
-import {createStore, applyMiddleware} from 'redux';//createStore - создает наше хранилище данных, applyMiddleware - подключает мидлвари
-import {createBrowserHistory} from 'history'; // позваляет подключиться истории браузера
-import rootReducer from './rootReducer'; // тут сборка из наших редюсеров
-import {routerMiddleware} from 'connected-react-router'; // перехватчик истории браузера для Redux
-import logger from 'redux-logger'; // Мидлваря для логирования изменений стора
-import thunk from 'redux-thunk'; // мидлваря для асинхронных событий
+import {createStore, applyMiddleware} from 'redux';
+import {createBrowserHistory} from 'history';
+import rootReducer from './rootReducer';
+import {routerMiddleware} from 'connected-react-router';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
+import {counterMiddleware} from "./counterMiddleware";//импортим мидлварю
 
-export const history = createBrowserHistory(); // создаем объект истории
+export const history = createBrowserHistory();
 
-// создаем объект стора с подключением наших редюсеров и мидлварей
-export const store = createStore(rootReducer(history), applyMiddleware(logger, thunk, routerMiddleware(history)));
+
+export const store = createStore(
+    rootReducer(history),
+    applyMiddleware(logger, thunk, routerMiddleware(history), counterMiddleware) //подключаем ее
+);

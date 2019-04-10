@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { history } from '../store/store';
 
-import {TestComponent} from '../features/testFeature'; // импорт нашей новой фичи
+import TestComponent from '../features/testFeature'; // импорт нашей новой фичи
 
 const Router = () => (
     <ConnectedRouter history={history}>

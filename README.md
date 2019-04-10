@@ -1,21 +1,18 @@
 React + Redux first app
 
-Шаг 3:
-Создание `reducer` , `index` и `component`
+Шаг 4:
+Создание `actions and selectors`
 
-Итак в первую очередь удалим файл `Test.jsx` 
-и создадим нашу первую фичу
-
+Добавляем в нашу тестовую фичу новые файлы `actions.js` и `selectors.js`
 ```
 features
 |--testFeature
+|  |--actions.js
 |  |--index.js
 |  |--reducer.js
 |  |--component.jsx
+|  |--selectors.js
 ```
-Потом подключаем редюсер в `rootReducer` и подключаем фичю в `router`
-После запуска с консолью мы должны увидеть наше дефолтное значение для `testReducer` в логе,
 
-смотрите скрин `step-3-result.png`
-
+И бонусом в папке `store` создаем `middleware` и подключаем к стору
 
