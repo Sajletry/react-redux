@@ -1,9 +1,10 @@
-import { combineReducers } from 'redux'; // метод для объеденения редьюсеров
-import { connectRouter } from 'connected-react-router' // метод для подключения роутинга к Redux
+import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
+import {testReducer} from "../features/testFeature"; //импортимм
 
-
-export default function rootReducer(history) { // сборка наших редюсеров
+export default function rootReducer(history) {
     return combineReducers({
-        router: connectRouter(history)
+        router: connectRouter(history),
+        testReducer: testReducer//подключаем наш новый редюсер
     });
 }
