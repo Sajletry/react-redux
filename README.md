@@ -17,6 +17,6 @@ React + Redux first app
     открываем `http://localhost:3000/`. Радуемся, закрываем
     
 Теперь надо поставить все пакеты необходимые для `Redux`.
-Выполняем `npm i redux react-redux connected-react-router history --save`
+Выполняем `npm i redux react-redux connected-react-router history react-router-dom redux-logger redux-thunk reselect --save`
 
 
